@@ -1,22 +1,10 @@
 [
   {
-    "id": "manual-unltd-awards",
-    "name": "UnLtd Awards — Starting Up / Scaling Up",
-    "tags": ["tech-for-good"],
-    "deadlineDate": "2026-08-31",
-    "deadlineHint": "新一轮已于 2026-07-01 开放；每轮限 650 份申请，通常几天内额满",
-    "summary": "面向 16 岁以上社会企业家的非稀释性资助。Starting Up 最高 £8,000（idea / 早期阶段），Scaling Up 最高 £18,000（已运营 1–4 年，可覆盖工资与生活成本），并配一年一对一辅导。",
-    "link": "https://unltd.org.uk/awards/",
-    "source": "manual",
-    "verified": true,
-    "firstSeen": "2026-07-06",
-    "lastSeen": "2026-07-06",
-    "isNew": false
-  },
-  {
     "id": "manual-nihr-eme",
     "name": "NIHR Efficacy and Mechanism Evaluation (EME) Programme — researcher-led",
-    "tags": ["healthcare"],
+    "tags": [
+      "healthcare"
+    ],
     "deadlineDate": "2026-08-05",
     "deadlineHint": "Outline application 截止 2026-08-05",
     "summary": "资助严谨评估某项干预/器械\"是否有效、为何有效\"的研究项目。偏学术证据生成而非典型创业资助，适合已有 NHS / 学术合作方时申请。",
@@ -30,7 +18,9 @@
   {
     "id": "manual-raeng-enterprise-fellowships",
     "name": "Royal Academy of Engineering — Enterprise Fellowships",
-    "tags": ["new-grad"],
+    "tags": [
+      "new-grad"
+    ],
     "deadlineDate": "2026-08-26",
     "deadlineHint": "2026 年 7 月中重新开放 Stage 1；往年 7 月批次 Stage 1 约在 8 月下旬截止（本次日期为估算，需上官网确认）",
     "summary": "面向应届毕业生/研究者的深科技孵化项目。最高 £75,000 无股权资助，配一对一导师 + 12 个月培训，不占 IP。robotics 硕士背景 + 讲师身份可走 \"researcher\" 通道。",
@@ -42,9 +32,28 @@
     "isNew": false
   },
   {
+    "id": "manual-unltd-awards",
+    "name": "UnLtd Awards — Starting Up / Scaling Up",
+    "tags": [
+      "tech-for-good"
+    ],
+    "deadlineDate": "2026-08-31",
+    "deadlineHint": "新一轮已于 2026-07-01 开放；每轮限 650 份申请，通常几天内额满",
+    "summary": "面向 16 岁以上社会企业家的非稀释性资助。Starting Up 最高 £8,000（idea / 早期阶段），Scaling Up 最高 £18,000（已运营 1–4 年，可覆盖工资与生活成本），并配一年一对一辅导。",
+    "link": "https://unltd.org.uk/awards/",
+    "source": "manual",
+    "verified": true,
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": false
+  },
+  {
     "id": "manual-eic-accelerator",
     "name": "EIC Accelerator（Step 2，英国企业仅 Grant-only 选项）",
-    "tags": ["ai", "healthcare"],
+    "tags": [
+      "ai",
+      "healthcare"
+    ],
     "deadlineDate": "2026-09-02",
     "deadlineHint": "Step 2 截止 2026-09-02（Step 1 需提前数周提交）",
     "summary": "英国企业 Brexit 后只能走纯 Grant 模式（最高 €2.5M）。面向已有一定商业验证、准备规模化的深科技企业，对 TactiCall 现阶段门槛偏高，可作为 1–2 年后的目标。",
@@ -58,7 +67,10 @@
   {
     "id": "manual-rnid-discovery",
     "name": "RNID Discovery Research Grant",
-    "tags": ["healthcare", "ageing"],
+    "tags": [
+      "healthcare",
+      "ageing"
+    ],
     "deadlineDate": "2026-09-10",
     "deadlineHint": "初步申请截止 2026-09-10",
     "summary": "最高 £225K（单年不超 £75K），专门资助听力损失/耳鸣相关研究，也支持\"听力损失与痴呆症关联\"方向——正好能把听力损失驱动痴呆症的论述落到实处。通常需挂靠大学/研究机构申请。",
@@ -72,7 +84,9 @@
   {
     "id": "manual-nihr-hta-dev-grant",
     "name": "NIHR HTA Application Development Grant",
-    "tags": ["healthcare"],
+    "tags": [
+      "healthcare"
+    ],
     "deadlineDate": "2026-11-25",
     "deadlineHint": "截止 2026-11-25",
     "summary": "资助撰写一份严谨的健康技术评估（HTA）申请本身的前期工作，帮助把真实世界证据/成本效益论证做扎实，为后续更大的 NHS 相关资助铺路。",
@@ -86,7 +100,9 @@
   {
     "id": "manual-bgv-tech-for-good",
     "name": "Bethnal Green Ventures — Tech for Good Programme",
-    "tags": ["tech-for-good"],
+    "tags": [
+      "tech-for-good"
+    ],
     "deadlineDate": null,
     "deadlineHint": "2026 秋季批次已截止；下一批预计 2026 年 11 月开放申请（2027 年初启动），建议现在先订阅通知",
     "summary": "£60,000 现金投资（占股）+ 6 周高强度加速器。你之前已和 BGV 的 Paul 聊过，可以关注下一轮开放时间。",
@@ -100,7 +116,10 @@
   {
     "id": "manual-microsoft-ai-accessibility",
     "name": "Microsoft AI for Accessibility Grant",
-    "tags": ["ai", "healthcare"],
+    "tags": [
+      "ai",
+      "healthcare"
+    ],
     "deadlineDate": null,
     "deadlineHint": "申请通道目前关闭，滚动重开，需持续关注官网公告",
     "summary": "面向\"用 AI 服务残障群体\"的项目，提供 Azure 算力额度（$10K–$20K）+ 工程/数据标注相关现金资助。往年获资助项目中有一款高度类似 TactiCall 的产品（SmartEar：监听门铃/火警并做视觉提示），说明这个方向平台认可，值得蹲下一轮。",
@@ -114,7 +133,10 @@
   {
     "id": "manual-kingstrust-enterprise",
     "name": "King's Trust（原 Prince's Trust）Enterprise Programme",
-    "tags": ["under-25", "new-grad"],
+    "tags": [
+      "under-25",
+      "new-grad"
+    ],
     "deadlineDate": null,
     "deadlineHint": "滚动申请，无固定截止",
     "summary": "18–30 岁创业者可申请，最高 £5,000 资助 + 导师，金额较小，更适合非常早期/个人层面的起步成本。",
@@ -124,5 +146,830 @@
     "firstSeen": "2026-07-06",
     "lastSeen": "2026-07-06",
     "isNew": false
+  },
+  {
+    "id": "auto-61317d45778d",
+    "name": "Support links",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Help Privacy Cookies Accessibility statement Contact Terms and conditions Rhestr o Wasanaethau Cymraeg Government Digital Service All content is available under the Open Government Licence v3.0, except where otherwise stated",
+    "link": "https://www.gov.uk/business-finance-support",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "accessibility"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-ef05030239c3",
+    "name": "Sectors:",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Filter by AgrifoodBiotechnologyChemistryCreative IndustriesDesignDigitalElectronicsEnergyGeospatialGlobalHealthIndustrial MathsInfrastructureInvestmentKnowledge Transfer PartnershipsManufacturingMaterialsPhotonicsPlaceQuantumRobotics & AISecurity & DefenceSensorsSpaceSustainabilityTransportWater Sort By: Default Sort O",
+    "link": "https://iuk-business-connect.org.uk/opportunities/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "ageing",
+      "medtech"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-5bad12e9a9ea",
+    "name": "Deep Tech Co-Creation Accelerator 2026-2027",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": "Closes: 08/09/2026 The Co-Creation Accelerator pairs early-stage ventures with industry partners t",
+    "summary": "Opens: 02/07/2026 Closes: 08/09/2026 The Co-Creation Accelerator pairs early-stage ventures with industry partners to validate technology, with grants of up to €250,000.",
+    "link": "https://iuk-business-connect.org.uk/opportunities/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deep tech"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-85650d3c5491",
+    "name": "IHI (Innovative Health Initiative) 13th Call for Proposals",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": "deadline: 8 Oct 2026 Topics on accelerating healthcare innovation through networks, reducing animal",
+    "summary": "Short proposal submission deadline: 8 Oct 2026 Topics on accelerating healthcare innovation through networks, reducing animal use in drug safety studies, and decoding the immuno-science of diseases affected by ageing and the immune system.",
+    "link": "https://iuk-business-connect.org.uk/opportunities/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "ageing",
+      "healthcare innovation"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-d926beae92ac",
+    "name": "Women TechEU 2026-27",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": "Closes: 13/07/2027 Women TechEU 2 EIC is an EU-funded project designed to support women-led early-",
+    "summary": "Opens: 01/06/2026 Closes: 13/07/2027 Women TechEU 2 EIC is an EU-funded project designed to support women-led early-stage deep tech startups from Europe. Each startup can receive €75,000 in funding.",
+    "link": "https://iuk-business-connect.org.uk/opportunities/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deep tech"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-ca1b1508d37e",
+    "name": "Support links",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Innovate UK Innovation funding advice Events Connect to innovation experts Innovate UK blog Accessibility Terms and conditions Contact us How to apply for funding Latest funding opportunities GOV.UK uses cookies to make the site simpler. Find out more about cookies. All content is available under the Open Government Li",
+    "link": "https://apply-for-innovation-funding.service.gov.uk/competition/search",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "accessibility"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-e6fcd8bc16e1",
+    "name": "Our research",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "We're finding new treatments for hearing loss and tinnitus. Discover our research",
+    "link": "https://rnid.org.uk/what-we-do/biomedical-research/apply-for-funding/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false,
+    "snippet": "We're finding new treatments for hearing loss and tinnitus. Discover our research"
+  },
+  {
+    "id": "auto-44d268f44f12",
+    "name": "Discovery Research Grant",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Our Discovery Research Grants support projects that will generate knowledge to underpin the discovery of treatments for hearing loss or tinnitus, or improve how new treatments are developed and tested. Find out more about the Discovery Research Grant.",
+    "link": "https://rnid.org.uk/what-we-do/biomedical-research/apply-for-funding/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-ca3e8916c44b",
+    "name": "PhD studentships",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Our PhD studentship scheme aims to encourage the best students to become involved in hearing, deafness and tinnitus research in the UK. Find out more about the PhD studentships.",
+    "link": "https://rnid.org.uk/what-we-do/biomedical-research/apply-for-funding/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-1eec52c3ae77",
+    "name": "Innovation Seed Fund",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Our Innovation Seed Fund aims to provide funding to support a range of valuable small scale activities Through our Innovation Seed Fund grants, we aim to pump-prime innovative research into the causes, treatment and diagnosis of hearing loss, tinnitus and other hearing-related conditions. Find out more about the Innova",
+    "link": "https://rnid.org.uk/what-we-do/biomedical-research/apply-for-funding/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-602e9ead1318",
+    "name": "Legal information links",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Accessibility Cookies policy Modern slavery Privacy Terms and conditions",
+    "link": "https://rnid.org.uk/what-we-do/biomedical-research/apply-for-funding/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "accessibility"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-87c1738e97f2",
+    "name": "Research and development work relating to assistive technology: 2024 to 2025 - GOV.UK",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "It specifically focuses on a collaborative robot (‘cobot’) designed to enhance the auditory experience of a hearing-impaired human partner. Dandelion centres on the innovative enhancement of Tendertec’s AI sensors designed for home-based care assistance.",
+    "link": "https://www.gov.uk/government/publications/assistive-technology-research-and-development-work-2024-to-2025/research-and-development-work-relating-to-assistive-technology-2024-to-2025",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-a09993c57ab3",
+    "name": "Ndcs",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Assistive technology can be expensive, but local authorities, social services and other funding sources may be able to help. The availability of products and services can depend on where you live. Local authorities should normally provide equipment that deaf children or young people may need at school.",
+    "link": "https://www.ndcs.org.uk/information-and-support/assistive-technology/funding-technology/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-d120971c765a",
+    "name": "Assistive technology - Family Fund",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Funding for assistive technology can be used to help families access equipment that meets their child’s individual needs. We are working in partnership with Connevans, a specialist supplier of equipment for deaf children and adults, to support families in identifying and accessing suitable technology.",
+    "link": "https://www.familyfund.org.uk/assistive-technology/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-20438176797c",
+    "name": "How to get assistive technology",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Assistive technology can be expensive, but local authorities, social services and other funding sources may be able to help. The availability of products and services can depend on where you live. Local authorities should normally provide equipment that deaf children or young people may need at school.",
+    "link": "https://www.ndcs.org.uk/advice-and-support/all-advice-and-support-topics/hearing-aids-implants-and-assistive-technology/assistive-technology/how-get-assistive-technology",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-d695e3360584",
+    "name": "Charities For Disabled People UK: Helping You Access Assistive Technology – Sen-Sation",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Janki Saye accept grant applications from anyone living in the UK who is unable to meet the cost of assistive technologies. The foundation will consider your application and decide your eligibility before offering a grant. ... Email grants@jankisaye.org to request an application form.",
+    "link": "https://www.sen-sation.co.uk/charities-grants-for-disabled-people-uk-helping-you-access-assistive-technology/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-51831bfb5290",
+    "name": "Finding funding for an adapted computer system | AbilityNet",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Despite falling prices, the cost of a suitable computer system is still beyond the means of many disabled people, especially those on a low income. This factsheet provides information and advice on how disabled people may obtain alternative funding for assistive technology that could make a ...",
+    "link": "https://abilitynet.org.uk/factsheets/finding-funding-adapted-computer-system",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-090a23583398",
+    "name": "Funding Support for Assistive Technology in the UK",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "The Janki Saye Foundation grants assistive technology, including communication devices for those with speech and movement disabilities, and reading devices that empower people who are blind or have low vision.",
+    "link": "https://www.letsenvision.com/blog/funding-support-envision-glasses-for-assistive-technology-uk",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-a07a402c32bc",
+    "name": "Computer and Assistive Technology Grants",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "The Janki Saye Foundation provides grants to fund assistive technologies which can transform the lives of people with disabilities and special needs across the UK.",
+    "link": "https://www.disability-grants.org/assistive-technology-grants.html",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-133017059b75",
+    "name": "Technology and assistive devices - RNID",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Get support as a developer or manufacturer if you are working on new technology for people who are deaf, have hearing loss or tinnitus.",
+    "link": "https://rnid.org.uk/information-and-support/technology-and-products/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss",
+      "deaf"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-6db5ce432609",
+    "name": "Assistive technology | National Deaf Children's Society",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Radio aids Radio aids help deaf children and young people hear more clearly over distances or in noisy environments, like classrooms. Soundfield systems Soundfield systems provide clear and consistent sound throughout a room to help improve the listening conditions. Streamers Streamers connect to devices such as comput",
+    "link": "https://www.ndcs.org.uk/advice-and-support/all-advice-and-support-topics/hearing-aids-implants-and-assistive-technology/assistive-technology",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-ef05c71b2fee",
+    "name": "AST0025 - Evidence on Assistive technology",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Assistive technology works best when it is accompanied by deaf awareness training which can be provided to employers and employees under the Access to Work grant. In our experience, the benefit of this holistic approach is significant. Often, the support and actions recommended to one employee ...",
+    "link": "https://committees.parliament.uk/writtenevidence/86141/html/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-32cd29882ab4",
+    "name": "The Future of Disability Tech Startups | CPARF",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "This year, startups will be joining the accelerator from Australia, Canada, the United States and the United Kingdom. The demand for Remarkable’s global presence is also representative of the $13 trillion disability market and increased popularity of the global disabled and elderly assistive tech market, which is predi",
+    "link": "https://cparf.org/the-future-of-disability-tech-startups/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "disability",
+      "elderly"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-72a8dd1daa33",
+    "name": "Deaf Awareness Technology",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "This will include training staff on how the induction loop system works and how different hearing aids work with the induction loop system. If you would like us to supply and install a system at your venue, we have an online estimate page for you to complete. We will custom design a system for you and telephone you to ",
+    "link": "https://www.deafawarenesstechnology.co.uk/shop/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-f9c6e20de6c3",
+    "name": "Hearing loss and technology resources | AbilityNet",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "AbilityNet, Lloyds Bank, Signly, Microsoft and the RNID discussed how technology can help make the world more accessible to people who are Deaf or hard of hearing.",
+    "link": "https://abilitynet.org.uk/hearing-loss-and-technology-resources",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss",
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-5beec721764c",
+    "name": "Assistive technology - Deaf awareness - LibGuides at University of South Wales",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Interactive catalogue of equipment for deaf and hard of hearing people. ... You can apply for Disabled Students’ Allowances (DSAs) to cover some of the extra costs you have because of a mental health problem, long term illness or any other disability. ... ATW helps to cover the costs of practical support in the workpla",
+    "link": "https://libguides.southwales.ac.uk/c.php?g=669129&p=4748830",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing",
+      "assistive technology",
+      "disability"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-79950a78a369",
+    "name": "Hearing aids, implants and assistive technology",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Technology to support deaf children and young people to communicate, learn and live more independently. Explore different types of hearing devices, like hearing aids or cochlear implants, and whether they could be right for your child.",
+    "link": "https://www.ndcs.org.uk/advice-and-support/all-advice-and-support-topics/hearing-aids-implants-and-assistive-technology",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-8c4c19a77e8c",
+    "name": "Assistive Technology in addition to your hearing aids",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Assistive Listening Devices (ALD’s) help improve hearing the speech-in-noise.",
+    "link": "https://www.whittington.nhs.uk/document.ashx?id=13043",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-4a4e23830b00",
+    "name": "Deaf Awareness Week: Startups & Tech Improving Hearing Accessibility - TechRound",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "DeafTawk is a platform designed to bridge the communication gap between the deaf community and the hearing world.",
+    "link": "https://techround.co.uk/startups/deaf-awareness-week-startups-tech-improving-hearing-accessibility/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "accessibility"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-36b865bcd3f4",
+    "name": "Free Equipment for Deaf and Hard of Hearing Students and Employees",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "This grant can cover the costs of devices or assistive technology for employees. For example, Access to Work could provide funds for listening devices, loop systems, and communication devices like hearing aids.",
+    "link": "https://www.jamworks.com/news/free-equipment-deaf-and-hard-of-hearing-students-employees",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-5bec37e0da92",
+    "name": "Jayasudan Munsamy - DeepVisionTech.AI | LinkedIn",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Thanks to AIM &amp; AssisTech Foundation (ATF) At DeepVisionTech.AI, our Let&#x27;sTalkSign solution was born from listening to the Deaf community and addressing a gap that had long been overlooked. Grateful for the mentors, partners, institutions, organisations, accelerators, family members &amp; friends who believed ",
+    "link": "https://www.linkedin.com/in/jayasudan/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-5563b8c4da7f",
+    "name": "Assistive Technology for Deaf / Hard of Hearing Persons.",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Assistive technology enables deaf, hard of hearing, deafblind, and people with any kind of hearing loss, to live more independently and securely.",
+    "link": "https://www.linkedin.com/pulse/assistive-technology-deaf-hard-hearing-persons-veezaviz",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss",
+      "deaf",
+      "hard of hearing",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-533c0ccf4f22",
+    "name": "Hearing Assistive Technology Group Inc. | LinkedIn",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Hearing Assistive Technology Group Inc. | 76 followers on LinkedIn. Helping build a barrier-free Canada! | We are a team of technology specialists who are passionate about helping the hard of hearing community. Our goal is to remove communication barriers and help build inclusive spaces.",
+    "link": "https://ca.linkedin.com/company/hearing-assistive-technology-group-inc",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hard of hearing",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-fc798060da9b",
+    "name": "NB Deaf and Hard of Hearing Services | LinkedIn",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "The support and sponsorship of Government Departments, Agencies, the business community, and the public, together with our own fund-raising activities are essential for providing the funds necessary for our mission.",
+    "link": "https://ca.linkedin.com/company/nb-deaf-and-hard-of-hearing-services",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-b74bdf5c3a2d",
+    "name": "Deaf & Hear Alberta | LinkedIn",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Some funding is available. Visit https://hubs.la/Q02lQgTf0 #haveaheart #campbellmclaurinfoundation ... Play outside! You never have to worry about staying connected with a little help.",
+    "link": "https://ca.linkedin.com/company/deaf-and-hear-alberta",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-c99579ee2197",
+    "name": "Deaf and hard of hearing business owners are on the rise",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "If you are deaf or hard of hearing and live in the United Kingdom, you can apply for an Access to Work grant. The government-funded grant supports disabled people, including deaf and hard of hearing people, in their initiative to become ...",
+    "link": "https://www.linkedin.com/pulse/deaf-hard-hearing-business-owners-rise-tina-lannin",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-108c2bab12d1",
+    "name": "Colorado Commission for the Deaf, Hard of Hearing, and DeafBlind | LinkedIn",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "The commission exists to promote access to effective communication for everyone. Programs and services: • Auxiliary Services. • Colorado Early Hearing Detection and Intervention (COEHDI). Communications Technology Program. • DeafBlind Services. • Grant Program.",
+    "link": "https://linkedin.com/company/colorado-commission-for-the-deaf-and-hard-of-hearing",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-3f32890f5ece",
+    "name": "Nindi Kusuma - Designing Lab-to-Market Systems | Founder of NÖVA | 40+ Research & Innovation Projects | Bridging Research to Impact | LinkedIn",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "SIGNLY is an assistive technology device designed to translate sign language into text and speech, enabling two-way communication between deaf/mute individuals and non-sign language users. The project was initiated to address a key challenge: sign language is difficult to learn, varies across regions, and creates barri",
+    "link": "https://www.linkedin.com/in/nindikusuma/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-9a19d3a055e7",
+    "name": "Top 10+: World's Biggest Assistive Technology Market Companies for 2022",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Assistive technology can include anything from simple gadgets, like a magnifying glass, to more complex devices, like a computer with special software designed for people with disabilities. Assistive technology can be used to help people with a wide range of disabilities, including blindness, deafness, and physical han",
+    "link": "https://www.linkedin.com/pulse/top-10-worlds-biggest-assistive-technology-market-companies-shinde",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-052cea72daad",
+    "name": "We’ve just closed a $1M+ funding round to help the world prevent hearing loss (and look stylish while doing it)",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": "closed a $1M+ funding round to help the world prevent hearing loss (and look stylish while doin",
+    "summary": "They were able to look beyond the current economic pandemic and see our product’s potential to improve the way the world experiences sound. We’re now going to do all that’s in our power to get everyone to ‘sit up and listen’ about the importance of hearing health!",
+    "link": "https://www.linkedin.com/pulse/weve-just-closed-1m-funding-round-help-world-prevent-hearing-o",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-454499767314",
+    "name": "Laurie Allen on LinkedIn: Check out this awesome new feature for the Deaf/hard-of-hearing community!",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Captions and transcriptions don&#x27;t just benefit Senator Fetterman, they benefit people experiencing hearing loss, they benefit people struggling to hear because they are in a loud environment, they benefit everyone. https://lnkd.in/gPn2gRut Image: Senator John Fetterman wearing a black suit, white shirt and blue ti",
+    "link": "https://www.linkedin.com/posts/lallenlaurie_check-out-this-awesome-new-feature-for-the-activity-6999092624926097408-NWF-",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "hearing loss",
+      "deaf",
+      "assistive technology"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-08e6d26faf32",
+    "name": "Working in a Hearing World: Creating an inclusive workplace for the Deaf and Hard of Hearing Community",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "Passionate about increasing the opportunities for women in IT and Retail, Kimberly founded Rizing’s first employee resource group, WIT (Women in Technology) whose vision is to, “accelerate the leadership path for Rizing women so that they can reach their full potential in an inclusive workplace.” She is also an active ",
+    "link": "https://www.linkedin.com/pulse/working-hearing-world-creating-inclusive-workplace-deaf-sharp",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-8feddff7a808",
+    "name": "Deaf & Hard of Hearing Services of Florida, Inc.",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "1 billion members | Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.",
+    "link": "https://linkedin.com/company/deaf-&-hard-of-hearing-services-of-florida-inc-",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-be2fb320bf5c",
+    "name": "Learning from the Deaf Community at #TechInclusion16",
+    "tags": [],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "I arrived on Tuesday to help prepare the folks pitching in the startup showcase, and I was greeted with a group of people rapidly signing to one another. The group was from Veditz, a platform offering video chat tutoring for Deaf and hard of hearing students (as well as those wanting to learn sign language).",
+    "link": "https://www.linkedin.com/pulse/learning-from-deaf-community-techinclusion16-huntsman-she-her-",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "deaf",
+      "hard of hearing"
+    ],
+    "firstSeen": "2026-07-06",
+    "lastSeen": "2026-07-06",
+    "isNew": true,
+    "stale": false
   }
 ]
