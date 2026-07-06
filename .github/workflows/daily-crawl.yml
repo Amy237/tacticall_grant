@@ -1,0 +1,47 @@
+name: Daily grant crawl
+
+on:
+  schedule:
+    # 06:00 UTC every day — adjust to taste. GitHub may delay scheduled
+    # runs by a few/several minutes at busy times; that's normal.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}   # lets you click "Run workflow" on GitHub any time
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-grant-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Run crawler
+        run: node scripts/crawl.mjs
+        env:
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+
+      - name: Commit updated data (if anything changed)
+        run: |
+          git config user.name "grant-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/grants.json data/last-crawl.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: daily grant crawl $(date -u +%Y-%m-%d)"
+            git push
+          fi

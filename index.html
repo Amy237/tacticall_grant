@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TactiCall 资助雷达</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <span id="markHolder"></span>
+      <div>
+        <h1>TactiCall 资助雷达</h1>
+        <div class="sub">Grant Radar · 每日自动巡检</div>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="index.html" class="active">资助看板</a>
+      <a href="keywords.html">关键词与来源</a>
+      <a href="tracker.html">我的追踪</a>
+    </nav>
+  </div>
+</header>
+
+<div class="status-strip">
+  <div class="inner">
+    <span>上次抓取：<strong id="lastCrawl">读取中…</strong></span>
+    <span>共 <strong id="totalCount">–</strong> 条，其中 <strong id="newCount">–</strong> 条为最近新增</span>
+    <span id="actionLink"></span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="filters" id="filters">
+    <div class="searchbox"><input id="searchInput" type="text" placeholder="搜索名称或摘要…"></div>
+    <!-- tag checkboxes injected by JS -->
+  </div>
+
+  <div id="buckets"><!-- rendered by dashboard.js --></div>
+
+  <footer class="foot">TactiCall Grant Radar · 抓取结果为线索级别，正式提交前请务必点开原文核实截止日期与资格条件。</footer>
+</div>
+
+<script src="assets/common.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

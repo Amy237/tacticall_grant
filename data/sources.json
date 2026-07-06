@@ -1,0 +1,72 @@
+[
+  {
+    "id": "gov-business-finance",
+    "name": "GOV.UK — Finance and support for your business",
+    "url": "https://www.gov.uk/business-finance-support",
+    "note": "Government's own directory of live grants/loans; text-only, no JS required, updated centrally."
+  },
+  {
+    "id": "innovate-uk-connect-opportunities",
+    "name": "Innovate UK Business Connect — Opportunities",
+    "url": "https://iuk-business-connect.org.uk/opportunities/",
+    "note": "Curated Innovate UK / UKRI / Horizon Europe calls."
+  },
+  {
+    "id": "ifs-search",
+    "name": "Innovation Funding Service — competition search",
+    "url": "https://apply-for-innovation-funding.service.gov.uk/competition/search",
+    "note": "Official Innovate UK competition listing, server-rendered."
+  },
+  {
+    "id": "rnid-funding",
+    "name": "RNID — Apply for research funding",
+    "url": "https://rnid.org.uk/what-we-do/biomedical-research/apply-for-funding/",
+    "note": "Hearing-loss specific research grants; directly relevant to TactiCall."
+  },
+  {
+    "id": "unltd-awards",
+    "name": "UnLtd — Awards for social entrepreneurs",
+    "url": "https://unltd.org.uk/awards/",
+    "note": "Tech-for-good / social enterprise funding rounds."
+  },
+  {
+    "id": "raeng-enterprise-fellowships",
+    "name": "Royal Academy of Engineering — Enterprise Fellowships",
+    "url": "https://enterprisehub.raeng.org.uk/programmes/enterprise-fellowships/",
+    "note": "Equity-free deep-tech grant for graduates/researchers."
+  },
+  {
+    "id": "fundsforngos-individuals",
+    "name": "FundsforNGOs — funding for individuals",
+    "url": "https://www2.fundsforngos.org/category/individuals/",
+    "note": "Aggregator; noisy but broad coverage, good for surfacing leads to verify."
+  },
+  {
+    "id": "fundsforngos-health",
+    "name": "FundsforNGOs — health grants",
+    "url": "https://fundsforcompanies.fundsforngos.org/area/latest-grants-and-resources-for-health/",
+    "note": "Aggregator focused on health/healthtech grants."
+  },
+  {
+    "id": "kingstrust-enterprise",
+    "name": "King's Trust — Enterprise programme",
+    "url": "https://www.kingstrust.org.uk/help-for-young-people/tools-resources/business-plans-guide",
+    "note": "Rolling small grants for 18-30 founders; low priority but cheap to check."
+  },
+  {
+    "id": "brave-web-search",
+    "name": "Brave Search — 通用资助/加速器搜索",
+    "type": "search",
+    "query": "assistive technology deaf hard of hearing startup grant UK accelerator",
+    "url": "https://search.brave.com/search?q=assistive%20technology%20deaf%20hard%20of%20hearing%20startup%20grant%20UK%20accelerator",
+    "note": "Search-engine safety net so leads aren't limited to the curated list above. Plain fetch() scraping of Google/Bing/DuckDuckGo's result HTML was tested and reliably blocked by bot-detection (CAPTCHA / \"anomaly\" pages) even with a normal browser User-Agent, so this uses the Brave Search API instead — needs a free BRAVE_API_KEY repo secret (see README); without it this source is skipped gracefully rather than breaking the crawl."
+  },
+  {
+    "id": "brave-linkedin-search",
+    "name": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
+    "type": "search",
+    "query": "site:linkedin.com deaf hard of hearing assistive technology startup grant accelerator funding",
+    "url": "https://search.brave.com/search?q=site%3Alinkedin.com%20deaf%20hard%20of%20hearing%20assistive%20technology%20startup%20grant%20accelerator%20funding",
+    "note": "LinkedIn blocks unauthenticated scraping outright (fetching linkedin.com directly just hits a login wall), so this proxies a site:linkedin.com query through the Brave Search API instead — same BRAVE_API_KEY requirement as the source above."
+  }
+]
