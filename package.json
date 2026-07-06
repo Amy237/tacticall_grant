@@ -1,0 +1,16 @@
+{
+  "name": "tacticall-grant-radar-crawler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily heuristic crawler for the TactiCall Grant Radar static site.",
+  "scripts": {
+    "crawl": "node scripts/crawl.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

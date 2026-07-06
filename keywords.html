@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关键词与来源 · TactiCall 资助雷达</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <span id="markHolder"></span>
+      <div>
+        <h1>关键词与来源</h1>
+        <div class="sub">Grant Radar · 设置</div>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="index.html">资助看板</a>
+      <a href="keywords.html" class="active">关键词与来源</a>
+      <a href="tracker.html">我的追踪</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="panel">
+    <h2>连接到 GitHub</h2>
+    <p class="hint">
+      每天的自动抓取由 GitHub Actions 完成，不需要在这里做任何设置。<br>
+      但如果你想直接在这个网页上「编辑关键词 / 抓取来源 / 追踪进度」并保存回仓库，需要一个有权限的 Personal Access Token——
+      去 GitHub → Settings → Developer settings → Fine-grained tokens 新建一个，权限只勾选<strong>这一个仓库</strong>的
+      <strong>Contents: Read and write</strong>，其余都不要勾。Token 只会保存在你这台电脑浏览器的本地存储里，只会直接发给
+      api.github.com，不会经过任何其他服务器。不想用也完全可以——你随时可以直接在 GitHub 网页上手动改 data/*.json 文件。
+    </p>
+    <div class="field">
+      <label>仓库（owner/repo，通常会自动识别，出错时才需要手动填）</label>
+      <input type="text" id="repoInput" placeholder="例如 haofei/tacticall-grants">
+    </div>
+    <div class="field">
+      <label>分支</label>
+      <input type="text" id="branchInput" placeholder="main">
+    </div>
+    <div class="field">
+      <label>GitHub Token</label>
+      <input type="password" id="tokenInput" placeholder="github_pat_xxxxxxxx">
+    </div>
+    <button class="btn" id="saveConnBtn">保存连接设置（仅存本地浏览器）</button>
+    <span id="connStatus" style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-left:10px"></span>
+  </div>
+
+  <div class="panel">
+    <h2>抓取关键词</h2>
+    <p class="hint">
+      每天的爬虫会用这些关键词去匹配各个资助来源页面上的标题和段落。跟着 TactiCall 的进展调整这里——
+      比如换了新的目标市场、拿到新专利方向、或者开始考虑某个新场景时，把对应的词加进来。
+    </p>
+    <div id="kwBanner"></div>
+    <div class="chiplist" id="kwList"></div>
+    <div class="addrow">
+      <input type="text" id="kwInput" placeholder="新关键词，例如 fall detection">
+      <button class="btn ghost" id="kwAddBtn">添加</button>
+    </div>
+    <div style="margin-top:14px">
+      <button class="btn" id="kwSaveBtn">保存到 GitHub</button>
+      <span class="save-status" id="kwSaveStatus" style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-left:10px"></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>抓取来源</h2>
+    <p class="hint">
+      爬虫每天会挨个打开这些网址，抓取标题+段落文字，和上面的关键词做匹配。政府/慈善机构的网站通常不需要 JS 就能读到内容，
+      抓取效果比较好；有些机构官网是前端渲染的（比如某些企业官网），抓取效果会打折扣——这属于正常情况，抓不到时就手动去看看。
+    </p>
+    <div id="srcBanner"></div>
+    <div id="srcList"></div>
+    <div class="addrow" style="margin-top:10px">
+      <input type="text" id="srcNameInput" placeholder="来源名称">
+      <input type="text" id="srcUrlInput" placeholder="网址 https://…">
+      <button class="btn ghost" id="srcAddBtn">添加</button>
+    </div>
+    <div style="margin-top:14px">
+      <button class="btn" id="srcSaveBtn">保存到 GitHub</button>
+      <span class="save-status" id="srcSaveStatus" style="font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-left:10px"></span>
+    </div>
+  </div>
+
+  <footer class="foot">改动只有点了「保存到 GitHub」才会生效；GitHub Actions 会在下一次每日运行时读取新的关键词/来源。</footer>
+</div>
+
+<script src="assets/common.js"></script>
+<script src="assets/settings.js"></script>
+</body>
+</html>

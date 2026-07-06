@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的追踪 · TactiCall 资助雷达</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <span id="markHolder"></span>
+      <div>
+        <h1>我的追踪</h1>
+        <div class="sub">Grant Radar · 申请进度 Gantt</div>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="index.html">资助看板</a>
+      <a href="keywords.html">关键词与来源</a>
+      <a href="tracker.html" class="active">我的追踪</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div id="pickerPanel" class="panel" style="display:none">
+    <h2>选择要跟踪的资助</h2>
+    <p class="hint">从资助看板点「开始跟踪申请」会直接带着对应的资助进到这里；也可以在下面直接选一个。</p>
+    <div class="field">
+      <label>资助项目</label>
+      <select id="grantPicker"></select>
+    </div>
+    <button class="btn" id="pickBtn">打开追踪表 →</button>
+
+    <h2 style="margin-top:30px">已经在跟踪的项目</h2>
+    <div id="existingTrackers"></div>
+  </div>
+
+  <div id="trackerPanel" style="display:none">
+    <div class="panel">
+      <p class="hint" style="margin:0 0 6px">正在跟踪</p>
+      <h2 id="grantName" style="margin:0 0 6px"></h2>
+      <p class="hint" style="margin:0">
+        <a id="grantLink" href="#" target="_blank" rel="noopener">查看原文 →</a>
+        · 截止日期：<strong id="grantDeadline"></strong>
+        · <a href="tracker.html">切换到另一个项目</a>
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>时间线</h2>
+      <div class="gantt-wrap">
+        <div class="gantt" id="ganttChart"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>任务清单</h2>
+      <p class="hint">名称、开始/结束日期、状态都可以改；改完点下面的「保存」。默认模板只是个起点，按你的实际节奏调整就好。</p>
+      <div class="tasklist" id="taskList"></div>
+      <button class="btn ghost" id="addTaskBtn">+ 添加任务</button>
+      <button class="btn ghost" id="templateBtn">使用默认模板</button>
+
+      <div style="margin-top:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button class="btn" id="saveLocalBtn">保存（本地浏览器）</button>
+        <button class="btn pink" id="saveGithubBtn">同步到 GitHub（可跨设备）</button>
+        <span id="saveStatus" style="font-family:var(--mono);font-size:11px;color:var(--ink-soft)"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">未点「同步到 GitHub」的改动只存在这台设备的浏览器里。</footer>
+</div>
+
+<script src="assets/common.js"></script>
+<script src="assets/tracker.js"></script>
+</body>
+</html>
