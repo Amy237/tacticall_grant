@@ -91,6 +91,19 @@ Token，见页面上的说明；这个 token 只存在你自己浏览器的 loca
   New repository secret，新建一个名叫 `BRAVE_API_KEY` 的 secret 填进去就行。
   不设置这个 secret 也完全不影响其他来源正常抓取——这两条搜索来源只会在当天的
   运行记录里显示"跳过"，不会报错中断整个流程。
+- 前面两种方式（固定网址 + 搜索 API）本质上都是**关键词逐字匹配**——一段文字必须
+  原文出现 `data/keywords.json` 里的某个词才会被收进结果，不理解语义、不认同义词。
+  实测发现 UnLtd、RAEng 这类页面明明内容相关，就是因为措辞没撞上关键词表而被
+  完全漏掉。`data/sources.json` 里第三种 `"type": "claude"` 的来源就是为了解决
+  这个问题：调用 **Anthropic API**（Claude 的 web_search 工具），让模型自己去
+  多角度搜索、自己判断相关性，而不是死板的字面比对。要启用它，去
+  [console.anthropic.com](https://console.anthropic.com/) 生成一个 API key，
+  同样在仓库 Settings → Secrets and variables → Actions 里新建一个叫
+  `ANTHROPIC_API_KEY` 的 secret。**注意这是按量计费的付费 API**，跟 Claude Code
+  订阅是两码事、分开算钱——每次运行的搜索次数在代码里设了上限
+  （`crawlClaudeSource()` 里的 `max_uses`），实际花费很小（大概每天几美分到几毛
+  钱的量级），但不是免费的，加之前心里有数就好。不设置这个 secret 同样不影响
+  其他来源，只会跳过这一条。
 - 每条自动抓到的记录都标着 `source: "auto"` 和 `verified: false`，看板上会显示
   「待核实」——**提交申请前务必点进原文核实截止日期和资格条件**，不要直接信爬虫。
 - 想让某条抓到的记录"转正"：在看板上点「编辑」，把日期/标签核实好之后勾上

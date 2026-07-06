@@ -33,6 +33,7 @@ jobs:
         run: node scripts/crawl.mjs
         env:
           BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Commit updated data (if anything changed)
         run: |

@@ -5,13 +5,20 @@
  *
  * What it actually does:
  *   1. Reads data/keywords.json and data/sources.json.
- *   2. Fetches each source URL as plain HTML (no headless browser —
- *      so JS-rendered pages will yield little or nothing; that's a
- *      known limitation, not a bug — see README).
- *   3. Splits each page into heading -> following-text sections and
- *      checks whether any keyword appears in that section.
- *   4. Extracts a loose "deadline hint" via regex if one is nearby.
- *   5. Merges matches into data/grants.json:
+ *   2. Per source, depending on its "type":
+ *        - (default/"page") fetches the URL as plain HTML (no
+ *          headless browser — so JS-rendered pages will yield little
+ *          or nothing; known limitation, not a bug — see README),
+ *          splits it into heading -> following-text sections, and
+ *          checks whether any keyword appears in that section.
+ *        - "search" runs a fixed query against the Brave Search API.
+ *        - "claude" asks the Anthropic API (with its web_search tool)
+ *          to actually go search and judge relevance semantically,
+ *          instead of literal keyword matching — see
+ *          crawlClaudeSource() below for why this exists.
+ *   3. Extracts a loose "deadline hint" via regex if one is nearby
+ *      (for "claude" sources, the model reports this itself instead).
+ *   4. Merges matches into data/grants.json:
  *        - new match  -> appended, isNew:true, firstSeen:today
  *        - seen before -> lastSeen updated, isNew:false
  *        - not re-found in 45+ days -> flagged stale:true (not deleted)
@@ -180,6 +187,114 @@ async function crawlSearchSource(source, keywords) {
   return candidates;
 }
 
+const TAG_WHITELIST = new Set(['healthcare', 'ageing', 'tech-for-good', 'under-25', 'ai', 'new-grad']);
+
+function buildClaudePrompt(knownNames) {
+  return `You are helping a startup founder research non-dilutive funding opportunities (grants, accelerator programmes, innovation competitions, fellowships, prizes).
+
+About the startup — TactiCall: a wearable device that detects household notification sounds (doorbell, smoke alarm, oven timer, etc.) and alerts Deaf / hard-of-hearing (D/HH) users via distinct wrist vibration patterns, without needing per-room hardware installs. Positioned as consumer electronics, not a medical device. Solo-founder stage, UK-based, incubated at UAL Greenhouse, applying to accelerators like Bethnal Green Ventures.
+
+Task: use web search to find CURRENTLY OPEN or clearly upcoming funding opportunities this startup could realistically apply to. Prioritize, in roughly this order: UK-based or UK-founder-eligible programmes; accessibility / assistive technology / hearing loss / Deaf community focus; tech-for-good / social enterprise; deep tech / hardware startups; AI-in-accessibility. Also worth considering: ageing/elderly tech, disability inclusion, healthtech (non-medical-device framing), women or under-represented founders, new graduate / student entrepreneur schemes, Innovate UK / UKRI / Horizon Europe calls.
+
+Run several distinct searches with genuinely different phrasing and angles (not just one query) — the way a person doing real due diligence would search multiple times, not the way a single keyword lookup would. Use your judgement on which programmes are real vs. expired vs. rumour; only report something if you found a real, currently-reachable page for it.
+
+Opportunities already tracked — do not re-report these, focus on anything not in this list:
+${knownNames || '(none yet)'}
+
+When you are done researching, your FINAL reply must be ONLY a raw JSON array (no markdown code fences, no commentary before or after) of up to 20 objects, each shaped exactly like this:
+{"title": string, "url": string, "summary": string (1-3 sentences, in Chinese, plain description of what it is and who it's for), "deadlineHint": string or null (any deadline wording you found, in its original language), "tags": array containing zero or more of "healthcare", "ageing", "tech-for-good", "under-25", "ai", "new-grad"}
+
+Only include opportunities you found real evidence for via search (a working, specific URL — not a homepage). Do not invent anything. If you find fewer than 20 genuine opportunities, return fewer. If you find none, return [].`;
+}
+
+function extractJSONArray(text) {
+  const start = text.indexOf('[');
+  const end = text.lastIndexOf(']');
+  if (start === -1 || end === -1 || end < start) return null;
+  return text.slice(start, end + 1);
+}
+
+/**
+ * "claude" sources use the Anthropic API's built-in web_search tool so
+ * the model can actually search the live web and judge relevance the
+ * way a person would, instead of the literal keyword-substring
+ * matching every other source relies on. This exists because that
+ * substring matching was diagnosed as the main cause of missed leads
+ * (e.g. UnLtd and RAEng pages have real, relevant funding copy that
+ * simply never contains an exact phrase from data/keywords.json).
+ *
+ * Needs an ANTHROPIC_API_KEY repo secret (see README) — this is a
+ * paid API, separate from any Claude Code subscription, and the
+ * web_search tool itself is billed per search on top of normal token
+ * costs, so max_uses below caps it to a predictable, small daily
+ * spend. If the key isn't set, this source is skipped like any other
+ * source-level failure.
+ */
+async function crawlClaudeSource(source, grants) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY not set — add it as a repo secret to enable this source (see README)');
+  }
+
+  const knownNames = grants.slice(0, 60).map(g => g.name).join(' | ');
+  const prompt = buildClaudePrompt(knownNames);
+
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), 120000);
+  let res;
+  try {
+    res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-5',
+        max_tokens: 8000,
+        tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 8 }],
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    });
+  } finally {
+    clearTimeout(t);
+  }
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Claude API HTTP ${res.status}: ${body.slice(0, 200)}`);
+  }
+
+  const data = await res.json();
+  const textBlocks = (data.content || []).filter(b => b.type === 'text').map(b => b.text);
+  const lastText = textBlocks[textBlocks.length - 1] || '';
+  const jsonSlice = extractJSONArray(lastText);
+  if (!jsonSlice) throw new Error('Claude did not return a parseable JSON array');
+
+  let items;
+  try {
+    items = JSON.parse(jsonSlice);
+  } catch (e) {
+    throw new Error(`Could not parse Claude's JSON output: ${e.message}`);
+  }
+  if (!Array.isArray(items)) throw new Error('Claude output was not a JSON array');
+
+  return items
+    .filter(it => it && it.title && it.url)
+    .slice(0, 20)
+    .map(it => ({
+      title: String(it.title).trim(),
+      snippet: String(it.summary || '').trim().slice(0, 320),
+      matchedKeywords: ['claude-web-search'],
+      deadlineHint: it.deadlineHint || null,
+      url: it.url,
+      tags: Array.isArray(it.tags) ? it.tags.filter(tg => TAG_WHITELIST.has(tg)) : [],
+      sourceId: source.id,
+      sourceName: source.name,
+    }));
+}
+
 async function main() {
   const keywords = JSON.parse(await readFile(KEYWORDS_PATH, 'utf8'));
   const sources = JSON.parse(await readFile(SOURCES_PATH, 'utf8'));
@@ -193,6 +308,8 @@ async function main() {
     try {
       const found = source.type === 'search'
         ? await crawlSearchSource(source, keywords)
+        : source.type === 'claude'
+        ? await crawlClaudeSource(source, grants)
         : await crawlSource(source, keywords);
       totalCandidates += found.length;
       runLog.push({ source: source.name, ok: true, matches: found.length });
@@ -216,7 +333,7 @@ async function main() {
           const fresh = {
             id,
             name: c.title,
-            tags: [],
+            tags: c.tags || [],
             deadlineDate: parsedDate,
             deadlineHint: c.deadlineHint,
             summary: c.snippet,
@@ -278,4 +395,4 @@ if (isMain) {
   });
 }
 
-export { crawlSource, crawlSearchSource, extractDeadlineHint, parseLooseDate, hashId };
+export { crawlSource, crawlSearchSource, crawlClaudeSource, extractDeadlineHint, parseLooseDate, hashId };
