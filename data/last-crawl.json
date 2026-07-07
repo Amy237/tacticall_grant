@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-07-07T09:52:01.498Z",
+  "ranAt": "2026-07-07T15:08:24.196Z",
   "sourcesChecked": 12,
   "candidatesFound": 47,
-  "totalGrants": 55,
+  "totalGrants": 58,
   "log": [
     {
       "source": "GOV.UK — Finance and support for your business",
@@ -12,7 +12,7 @@
     {
       "source": "Innovate UK Business Connect — Opportunities",
       "ok": true,
-      "matches": 6
+      "matches": 5
     },
     {
       "source": "Innovation Funding Service — competition search",
@@ -57,12 +57,24 @@
     {
       "source": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
       "ok": true,
-      "matches": 14
+      "matches": 15
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
       "ok": false,
-      "error": "ANTHROPIC_API_KEY not set — add it as a repo secret to enable this source (see README)"
+      "error": "Claude did not return a parseable JSON array"
     }
-  ]
+  ],
+  "sourceLastRun": {
+    "gov-business-finance": "2026-07-07",
+    "innovate-uk-connect-opportunities": "2026-07-07",
+    "ifs-search": "2026-07-07",
+    "rnid-funding": "2026-07-07",
+    "unltd-awards": "2026-07-07",
+    "raeng-enterprise-fellowships": "2026-07-07",
+    "fundsforngos-individuals": "2026-07-07",
+    "fundsforngos-health": "2026-07-07",
+    "brave-web-search": "2026-07-07",
+    "brave-linkedin-search": "2026-07-07"
+  }
 }
