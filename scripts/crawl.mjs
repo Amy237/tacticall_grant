@@ -245,8 +245,12 @@ async function crawlClaudeSource(source, grants) {
   const knownNames = grants.slice(0, 60).map(g => g.name).join(' | ');
   const prompt = buildClaudePrompt(knownNames);
 
+  // Multiple rounds of web_search + reasoning routinely take well over
+  // 2 minutes (the first live run got cut off by a 120s timeout here
+  // before it could finish synthesizing); GitHub Actions jobs have no
+  // tight time budget, so give this plenty of room.
   const controller = new AbortController();
-  const t = setTimeout(() => controller.abort(), 120000);
+  const t = setTimeout(() => controller.abort(), 300000);
   let res;
   try {
     res = await fetch('https://api.anthropic.com/v1/messages', {
