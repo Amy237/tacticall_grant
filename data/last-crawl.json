@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-07-07T15:15:23.864Z",
+  "ranAt": "2026-07-07T15:18:16.952Z",
   "sourcesChecked": 12,
-  "candidatesFound": 47,
-  "totalGrants": 58,
+  "candidatesFound": 49,
+  "totalGrants": 60,
   "log": [
     {
       "source": "GOV.UK — Finance and support for your business",
@@ -61,8 +61,8 @@
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
-      "ok": false,
-      "error": "This operation was aborted"
+      "ok": true,
+      "matches": 2
     }
   ],
   "sourceLastRun": {
@@ -75,6 +75,7 @@
     "fundsforngos-individuals": "2026-07-07",
     "fundsforngos-health": "2026-07-07",
     "brave-web-search": "2026-07-07",
-    "brave-linkedin-search": "2026-07-07"
+    "brave-linkedin-search": "2026-07-07",
+    "claude-web-research": "2026-07-07"
   }
 }

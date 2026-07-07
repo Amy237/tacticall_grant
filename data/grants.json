@@ -1109,5 +1109,49 @@
     "isNew": true,
     "stale": false,
     "snippet": "Horowitz demonstrated that he maintained his deep interest in rehabilitation and enabling people with disabilities, when he won the largest EU grant as of 2001, and when he devoted two major work packages to the UK&#x27;s admired agencies, RNIB and RNID. Dr. Horowitz is the contemporary catalytic thought leader in Imme"
+  },
+  {
+    "id": "auto-a9bfbdac43bb",
+    "name": "ATS Accelerator (Access to Success) — 2026 Cohort",
+    "tags": [
+      "healthcare",
+      "ageing",
+      "tech-for-good"
+    ],
+    "deadlineDate": null,
+    "deadlineHint": "2026 applications are now open",
+    "summary": "面向全球无障碍/辅助科技(含听障、老龄化、认知等领域)初创企业的免费3个月线上加速器,提供超过5万美元的无限制现金资助及行业专家指导;要求已有最小可行产品并与残障/听障社群共创验证过产品。",
+    "link": "https://accesstosuccess.ca/accelerator/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "claude-web-search"
+    ],
+    "firstSeen": "2026-07-07",
+    "lastSeen": "2026-07-07",
+    "isNew": true,
+    "stale": false
+  },
+  {
+    "id": "auto-deccea3a698d",
+    "name": "Innovate UK Young Innovators Award",
+    "tags": [
+      "under-25",
+      "new-grad",
+      "tech-for-good"
+    ],
+    "deadlineDate": null,
+    "deadlineHint": null,
+    "summary": "英国创新署(Innovate UK)面向18-30岁、有权在英国工作的青年创始人的资助项目,提供5000英镑资助金加生活津贴、一对一商业教练及培训网络支持,历年已支持超过250名青年创新者;需在官网确认下一轮具体开放及截止日期。",
+    "link": "https://iuk-business-connect.org.uk/programme/young-innovators/",
+    "source": "auto",
+    "verified": false,
+    "matchedKeywords": [
+      "claude-web-search"
+    ],
+    "firstSeen": "2026-07-07",
+    "lastSeen": "2026-07-07",
+    "isNew": true,
+    "stale": false
   }
 ]
