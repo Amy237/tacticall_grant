@@ -52,6 +52,12 @@ function today() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function daysBetween(aISO, bISO) {
+  const a = new Date(aISO + 'T00:00:00Z').getTime();
+  const b = new Date(bISO + 'T00:00:00Z').getTime();
+  return Math.round((b - a) / 86400000);
+}
+
 const MONTHS = ['january','february','march','april','may','june','july','august',
   'september','october','november','december'];
 
@@ -301,10 +307,34 @@ async function main() {
   const grants = JSON.parse(await readFile(GRANTS_PATH, 'utf8'));
   const byId = new Map(grants.map(g => [g.id, g]));
 
+  // "minDaysBetweenRuns" on a source (e.g. the paid Claude source) lets
+  // it skip most days instead of running with every daily crawl — read
+  // back when each source last actually ran from the previous
+  // last-crawl.json so this survives across runs.
+  let sourceLastRun = {};
+  try {
+    const prev = JSON.parse(await readFile(LAST_CRAWL_PATH, 'utf8'));
+    sourceLastRun = prev.sourceLastRun || {};
+  } catch (e) { /* no previous run log yet — fine */ }
+
+  const todayStr = today();
   const runLog = [];
   let totalCandidates = 0;
 
   for (const source of sources) {
+    const minGap = source.minDaysBetweenRuns || 0;
+    const lastRun = sourceLastRun[source.id];
+    if (minGap > 0 && lastRun && daysBetween(lastRun, todayStr) < minGap) {
+      runLog.push({
+        source: source.name,
+        ok: true,
+        matches: 0,
+        skipped: true,
+        reason: `throttled — last ran ${lastRun}, runs every ${minGap} day(s)`,
+      });
+      continue;
+    }
+
     try {
       const found = source.type === 'search'
         ? await crawlSearchSource(source, keywords)
@@ -313,6 +343,7 @@ async function main() {
         : await crawlSource(source, keywords);
       totalCandidates += found.length;
       runLog.push({ source: source.name, ok: true, matches: found.length });
+      sourceLastRun[source.id] = todayStr;
 
       for (const c of found) {
         const id = 'auto-' + hashId(c.sourceId + '::' + c.title.toLowerCase());
@@ -382,6 +413,7 @@ async function main() {
     candidatesFound: totalCandidates,
     totalGrants: grants.length,
     log: runLog,
+    sourceLastRun,
   }, null, 2) + '\n');
 
   console.log(`Done. ${sources.length} source(s) checked, ${totalCandidates} candidate match(es), ${grants.length} grant(s) total.`);

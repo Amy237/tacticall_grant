@@ -73,7 +73,8 @@
     "id": "claude-web-research",
     "name": "Claude 网络调研 (语义理解搜索)",
     "type": "claude",
+    "minDaysBetweenRuns": 2,
     "url": "https://console.anthropic.com/",
-    "note": "所有别的来源都是靠 data/keywords.json 里的词做逐字匹配——这也是 UnLtd、RAEng 这些页面明明相关却被漏掉的原因（措辞没撞上关键词表）。这条改成调用 Anthropic API 的 web_search 工具，让模型自己去搜、自己判断相关性，而不是字面比对。需要一个 ANTHROPIC_API_KEY 仓库 secret（这是按量计费的付费 API，和 Claude Code 订阅是分开算钱的，每次运行搜索次数有上限，实际花费很小但不是免费的，见 README）；没配置这个 secret 时这条来源会被跳过，不影响其他来源。"
+    "note": "所有别的来源都是靠 data/keywords.json 里的词做逐字匹配——这也是 UnLtd、RAEng 这些页面明明相关却被漏掉的原因（措辞没撞上关键词表）。这条改成调用 Anthropic API 的 web_search 工具，让模型自己去搜、自己判断相关性，而不是字面比对。需要一个 ANTHROPIC_API_KEY 仓库 secret（这是按量计费的付费 API，和 Claude Code 订阅是分开算钱的，见 README）；没配置这个 secret 时这条来源会被跳过，不影响其他来源。每天的抓取会照常跑，但这一条每 2 天才真正调用一次 API（省钱），中间跳过的日子会在运行记录里显示 skipped。"
   }
 ]
