@@ -259,8 +259,8 @@ async function crawlClaudeSource(source, grants) {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-5',
-        max_tokens: 8000,
-        tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 8 }],
+        max_tokens: 16000,
+        tools: [{ type: 'web_search_20250305', name: 'web_search', max_uses: 6 }],
         messages: [{ role: 'user', content: prompt }],
       }),
     });
@@ -273,16 +273,21 @@ async function crawlClaudeSource(source, grants) {
   }
 
   const data = await res.json();
+  const blockTypes = (data.content || []).map(b => b.type).join(',');
   const textBlocks = (data.content || []).filter(b => b.type === 'text').map(b => b.text);
   const lastText = textBlocks[textBlocks.length - 1] || '';
   const jsonSlice = extractJSONArray(lastText);
-  if (!jsonSlice) throw new Error('Claude did not return a parseable JSON array');
+  if (!jsonSlice) {
+    throw new Error(
+      `Claude did not return a parseable JSON array (stop_reason=${data.stop_reason}, blocks=[${blockTypes}], last text preview: ${JSON.stringify(lastText.slice(0, 300))})`
+    );
+  }
 
   let items;
   try {
     items = JSON.parse(jsonSlice);
   } catch (e) {
-    throw new Error(`Could not parse Claude's JSON output: ${e.message}`);
+    throw new Error(`Could not parse Claude's JSON output: ${e.message} (preview: ${JSON.stringify(jsonSlice.slice(0, 300))})`);
   }
   if (!Array.isArray(items)) throw new Error('Claude output was not a JSON array');
 
