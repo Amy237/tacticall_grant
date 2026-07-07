@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-07-07T15:08:24.196Z",
+  "ranAt": "2026-07-07T15:15:23.864Z",
   "sourcesChecked": 12,
   "candidatesFound": 47,
   "totalGrants": 58,
@@ -62,7 +62,7 @@
     {
       "source": "Claude 网络调研 (语义理解搜索)",
       "ok": false,
-      "error": "Claude did not return a parseable JSON array"
+      "error": "This operation was aborted"
     }
   ],
   "sourceLastRun": {

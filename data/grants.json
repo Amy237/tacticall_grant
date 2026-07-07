@@ -1068,7 +1068,8 @@
     "firstSeen": "2026-07-07",
     "lastSeen": "2026-07-07",
     "isNew": true,
-    "stale": false
+    "stale": false,
+    "snippet": "Opens: 24/06/2026 Closes: 16/09/2026 EIT Health is offering €300,000 and €500,000 in funding per project to support high-potential European startups developing innovative solutions in biotech, medtech, digital health, AI, and biomarkers or diagnostics."
   },
   {
     "id": "auto-5a307cc3abb7",
@@ -1086,7 +1087,8 @@
     "firstSeen": "2026-07-07",
     "lastSeen": "2026-07-07",
     "isNew": true,
-    "stale": false
+    "stale": false,
+    "snippet": "Thanks to a generous $4.4 million USD grant from the Oberkotter Foundation, this multi-center, interdisciplinary team has the wonderful opportunity to make a difference for children with hearing loss and their families."
   },
   {
     "id": "auto-fb864f2b9898",
@@ -1105,6 +1107,7 @@
     "firstSeen": "2026-07-07",
     "lastSeen": "2026-07-07",
     "isNew": true,
-    "stale": false
+    "stale": false,
+    "snippet": "Horowitz demonstrated that he maintained his deep interest in rehabilitation and enabling people with disabilities, when he won the largest EU grant as of 2001, and when he devoted two major work packages to the UK&#x27;s admired agencies, RNIB and RNID. Dr. Horowitz is the contemporary catalytic thought leader in Imme"
   }
 ]
