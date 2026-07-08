@@ -153,19 +153,102 @@ const TCG = (() => {
     return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
   }
 
-  /* best-effort "23 August 2026" style text -> ISO date, used both
-     by the crawler (Node) and here (browser) so a person can also
-     re-run parsing on a hint they edit by hand. */
+  /* best-effort "23 August 2026" / "08/09/2026" style text -> ISO
+     date, used both by the crawler (Node) and here (browser) so a
+     person can also re-run parsing on a hint they edit by hand.
+     Mirrors scripts/crawl.mjs's parseLooseDate — keep both in sync. */
   const MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december'];
   function parseLooseDate(text) {
     if (!text) return null;
-    const m = text.match(/(\d{1,2})\s+(january|february|march|april|may|june|july|august|september|october|november|december)\s+(20\d{2})/i);
-    if (!m) return null;
-    const day = parseInt(m[1], 10);
-    const month = MONTHS.indexOf(m[2].toLowerCase());
-    const year = parseInt(m[3], 10);
-    const d = new Date(Date.UTC(year, month, day));
-    return d.toISOString().slice(0, 10);
+
+    const wordy = text.match(/(\d{1,2})\s+(january|february|march|april|may|june|july|august|september|october|november|december)\s+(20\d{2})/i);
+    if (wordy) {
+      const day = parseInt(wordy[1], 10);
+      const month = MONTHS.indexOf(wordy[2].toLowerCase());
+      const year = parseInt(wordy[3], 10);
+      if (month >= 0) return new Date(Date.UTC(year, month, day)).toISOString().slice(0, 10);
+    }
+
+    const iso = text.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);
+    if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+
+    // Numeric D/M/YYYY — assumes UK day-first ordering, matching the
+    // funders this tool tracks.
+    const numeric = text.match(/\b(\d{1,2})\/(\d{1,2})\/(20\d{2})\b/);
+    if (numeric) {
+      const day = parseInt(numeric[1], 10);
+      const month = parseInt(numeric[2], 10) - 1;
+      const year = parseInt(numeric[3], 10);
+      if (month >= 0 && month <= 11 && day >= 1 && day <= 31) {
+        return new Date(Date.UTC(year, month, day)).toISOString().slice(0, 10);
+      }
+    }
+
+    return null;
+  }
+
+  /* ---------------- star / follow ----------------
+     Purely local — a personal "pay attention to this" flag, not
+     synced to the repo like keywords/sources/tracker data. It's
+     meant to be fast (no GitHub token round-trip for a one-click
+     toggle), so it only lives in this browser's localStorage. */
+  function getStarred() {
+    try {
+      return new Set(JSON.parse(localStorage.getItem('tcg_starred') || '[]'));
+    } catch (e) { return new Set(); }
+  }
+  function isStarred(id) {
+    return getStarred().has(id);
+  }
+  function toggleStar(id) {
+    const set = getStarred();
+    if (set.has(id)) set.delete(id); else set.add(id);
+    localStorage.setItem('tcg_starred', JSON.stringify([...set]));
+    return set.has(id);
+  }
+
+  /* ---------------- keyword translation (display only) ----------------
+     data/keywords.json stays plain English (that's what the crawler
+     matches against in scraped English pages) — this is a separate,
+     static, zero-cost lookup purely so auto-scraped cards can show a
+     Chinese "why this matched" line without needing an API call to
+     translate every scraped English summary. Unknown keywords (e.g.
+     ones added later without an update here) just fall back to the
+     original English string. */
+  const KEYWORD_ZH = {
+    'hearing loss': '听力损失',
+    'deaf': '聋人/失聪',
+    'hard of hearing': '重听',
+    'assistive technology': '辅助科技',
+    'wearable': '可穿戴设备',
+    'haptic': '触觉反馈',
+    'vibration alert': '振动提醒',
+    'notification sound': '通知声音',
+    'accessibility': '无障碍',
+    'disability': '残障',
+    'ageing': '老龄化',
+    'elderly': '老年群体',
+    'dementia': '认知症',
+    'tech for good': '科技向善',
+    'social enterprise': '社会企业',
+    'ai accessibility': 'AI 无障碍',
+    'artificial intelligence grant': '人工智能资助',
+    'healthcare innovation': '医疗创新',
+    'medtech': '医疗科技',
+    'non-dilutive funding': '非股权稀释资助',
+    'startup grant': '创业资助',
+    'seed grant': '种子期资助',
+    'women in innovation': '女性创新者',
+    'deep tech': '深科技',
+    'new graduate': '应届毕业生',
+    'student entrepreneur': '学生创业者',
+    'under 25': '25 岁以下',
+    'young entrepreneur': '青年创业者',
+    'horizon europe': '地平线欧洲计划',
+    'claude-web-search': 'Claude 网络调研（语义搜索）',
+  };
+  function translateKeywords(list) {
+    return (list || []).map(k => KEYWORD_ZH[(k || '').toLowerCase()] || k);
   }
 
   function slugify(s) {
@@ -197,5 +280,6 @@ const TCG = (() => {
     ghGetFile, ghPutFile, fetchJSON,
     todayISO, daysUntil, bucketFor, BUCKET_LABELS, urgencyLevel, fmtDate, parseLooseDate,
     slugify, escapeHTML, markSVG,
+    getStarred, isStarred, toggleStar, translateKeywords,
   };
 })();

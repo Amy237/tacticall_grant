@@ -14,6 +14,7 @@ const BUCKET_ORDER = ['within1', 'within2', 'within3', 'beyond', 'rolling'];
 let ALL_GRANTS = [];
 let ACTIVE_TAGS = new Set();
 let SEARCH_Q = '';
+let STARRED_ONLY = false;
 
 async function init() {
   document.getElementById('markHolder').innerHTML = TCG.markSVG();
@@ -53,6 +54,18 @@ function wireActionLink() {
 
 function renderFilters() {
   const box = document.getElementById('filters');
+
+  const starBox = document.createElement('label');
+  starBox.className = 'tagbox';
+  starBox.id = 'tag-starred';
+  starBox.innerHTML = `<input type="checkbox" data-tag="starred"> ⭐ 只看关注`;
+  starBox.querySelector('input').addEventListener('change', (e) => {
+    STARRED_ONLY = e.target.checked;
+    starBox.classList.toggle('on', STARRED_ONLY);
+    renderAll();
+  });
+  box.appendChild(starBox);
+
   Object.entries(TAG_LABELS).forEach(([tag, label]) => {
     const id = 'tag-' + tag;
     const el = document.createElement('label');
@@ -69,6 +82,7 @@ function renderFilters() {
 }
 
 function passesFilter(g) {
+  if (STARRED_ONLY && !TCG.isStarred(g.id)) return false;
   if (ACTIVE_TAGS.size > 0) {
     const tags = g.tags || [];
     if (![...ACTIVE_TAGS].some(t => tags.includes(t))) return false;
@@ -105,7 +119,11 @@ function renderAll() {
   });
 
   BUCKET_ORDER.forEach(bucketKey => {
-    const items = groups[bucketKey].sort((a, b) => (a.deadlineDate || '9999').localeCompare(b.deadlineDate || '9999'));
+    const items = groups[bucketKey].sort((a, b) => {
+      const starDiff = (TCG.isStarred(b.id) ? 1 : 0) - (TCG.isStarred(a.id) ? 1 : 0);
+      if (starDiff !== 0) return starDiff;
+      return (a.deadlineDate || '9999').localeCompare(b.deadlineDate || '9999');
+    });
     const section = document.createElement('section');
     section.className = 'bucket';
     section.innerHTML = `
@@ -118,15 +136,16 @@ function renderAll() {
       empty.textContent = '这个时间段内暂无匹配结果。';
       section.appendChild(empty);
     } else {
-      items.forEach(g => section.appendChild(renderCard(g)));
+      items.forEach(g => section.appendChild(renderCard(g, bucketKey)));
     }
     container.appendChild(section);
   });
 }
 
-function renderCard(g) {
+function renderCard(g, bucketKey) {
   const card = document.createElement('article');
   const isNew = isRecentlyNew(g);
+  const starred = TCG.isStarred(g.id);
   card.className = 'card' + (isNew ? ' is-new' : '') + (g.stale ? ' stale' : '');
   card.id = 'grant-' + g.id;
 
@@ -139,15 +158,24 @@ function renderCard(g) {
     ? (TCG.daysUntil(g.deadlineDate) >= 0 ? `剩 ${TCG.daysUntil(g.deadlineDate)} 天` : '已过期')
     : '滚动 / 无固定截止';
 
+  const kwZh = g.source === 'auto' ? TCG.translateKeywords(g.matchedKeywords) : [];
+  const kwHTML = kwZh.length
+    ? `<p class="summary" style="color:var(--ink-soft);font-size:12px">命中关键词：${TCG.escapeHTML(kwZh.join('、'))}</p>`
+    : '';
+
+  const isRolling = bucketKey === 'rolling';
+
   card.innerHTML = `
     <div class="card-top">
       <div style="flex:1">
         <h3>${TCG.escapeHTML(g.name)}</h3>
         <div class="tags">${tagsHTML}</div>
       </div>
+      <button class="star-btn${starred ? ' on' : ''}" data-act="star" aria-label="标记关注" title="标记关注">${starred ? '★' : '☆'}</button>
     </div>
     <p class="summary">${TCG.escapeHTML(g.summary || '')}</p>
     ${g.deadlineHint ? `<p class="summary" style="color:var(--ink-soft);font-size:13px">${TCG.escapeHTML(g.deadlineHint)}</p>` : ''}
+    ${kwHTML}
     <div class="meta-row">
       <div class="deadline">
         ${pulseHTML}
@@ -157,6 +185,7 @@ function renderCard(g) {
       <div class="actions">
         <a class="btn ghost" href="${g.link}" target="_blank" rel="noopener">查看原文 →</a>
         <button class="btn ghost" data-act="edit">编辑</button>
+        ${isRolling ? `<button class="btn ghost" data-act="fill-deadline">补充截止日期 ↑</button>` : ''}
         <a class="btn pink" href="tracker.html?id=${encodeURIComponent(g.id)}">开始跟踪申请 →</a>
       </div>
     </div>
@@ -176,12 +205,28 @@ function renderCard(g) {
     </form>
   `;
 
+  card.querySelector('[data-act="star"]').addEventListener('click', (e) => {
+    const nowOn = TCG.toggleStar(g.id);
+    e.currentTarget.textContent = nowOn ? '★' : '☆';
+    e.currentTarget.classList.toggle('on', nowOn);
+    renderAll();
+  });
   card.querySelector('[data-act="edit"]').addEventListener('click', () => {
     card.querySelector('.editform').classList.toggle('open');
   });
   card.querySelector('[data-act="cancel"]').addEventListener('click', () => {
     card.querySelector('.editform').classList.remove('open');
   });
+  const fillBtn = card.querySelector('[data-act="fill-deadline"]');
+  if (fillBtn) {
+    fillBtn.addEventListener('click', () => {
+      const form = card.querySelector('.editform');
+      form.classList.add('open');
+      const dateInput = form.querySelector('input[name="deadlineDate"]');
+      dateInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      dateInput.focus();
+    });
+  }
   card.querySelector('form[data-form]').addEventListener('submit', (e) => onSaveGrant(e, g.id));
 
   return card;

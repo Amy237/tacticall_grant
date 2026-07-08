@@ -63,13 +63,38 @@ const MONTHS = ['january','february','march','april','may','june','july','august
 
 function parseLooseDate(text) {
   if (!text) return null;
-  const m = text.match(/(\d{1,2})\s+(january|february|march|april|may|june|july|august|september|october|november|december)\s+(20\d{2})/i);
-  if (!m) return null;
-  const day = parseInt(m[1], 10);
-  const month = MONTHS.indexOf(m[2].toLowerCase());
-  const year = parseInt(m[3], 10);
-  if (month < 0) return null;
-  return new Date(Date.UTC(year, month, day)).toISOString().slice(0, 10);
+
+  const wordy = text.match(/(\d{1,2})\s+(january|february|march|april|may|june|july|august|september|october|november|december)\s+(20\d{2})/i);
+  if (wordy) {
+    const day = parseInt(wordy[1], 10);
+    const month = MONTHS.indexOf(wordy[2].toLowerCase());
+    const year = parseInt(wordy[3], 10);
+    if (month >= 0) return new Date(Date.UTC(year, month, day)).toISOString().slice(0, 10);
+  }
+
+  // ISO-ish YYYY-MM-DD, sometimes already present verbatim in scraped text
+  const iso = text.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+
+  // Numeric D/M/YYYY or DD/MM/YYYY — every source here is a UK
+  // funder (gov.uk, Innovate UK, etc.) so this assumes UK day-first
+  // ordering, not US month-first. This is what was missing before:
+  // extractDeadlineHint already captures text like "Closes:
+  // 08/09/2026 ..." correctly, but this function couldn't turn that
+  // into an actual date, so those entries stayed stuck in the
+  // "rolling / no deadline" bucket even though a real date was right
+  // there in the text.
+  const numeric = text.match(/\b(\d{1,2})\/(\d{1,2})\/(20\d{2})\b/);
+  if (numeric) {
+    const day = parseInt(numeric[1], 10);
+    const month = parseInt(numeric[2], 10) - 1;
+    const year = parseInt(numeric[3], 10);
+    if (month >= 0 && month <= 11 && day >= 1 && day <= 31) {
+      return new Date(Date.UTC(year, month, day)).toISOString().slice(0, 10);
+    }
+  }
+
+  return null;
 }
 
 function extractDeadlineHint(text) {
