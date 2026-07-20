@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-07-19T08:26:29.463Z",
+  "ranAt": "2026-07-20T09:26:29.189Z",
   "sourcesChecked": 12,
-  "candidatesFound": 44,
-  "totalGrants": 86,
+  "candidatesFound": 45,
+  "totalGrants": 88,
   "log": [
     {
       "source": "GOV.UK — Finance and support for your business",
@@ -62,22 +62,20 @@
     {
       "source": "Claude 网络调研 (语义理解搜索)",
       "ok": true,
-      "matches": 0,
-      "skipped": true,
-      "reason": "throttled — last ran 2026-07-18, runs every 2 day(s)"
+      "matches": 1
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-07-19",
-    "innovate-uk-connect-opportunities": "2026-07-19",
-    "ifs-search": "2026-07-19",
-    "rnid-funding": "2026-07-19",
-    "unltd-awards": "2026-07-19",
-    "raeng-enterprise-fellowships": "2026-07-19",
-    "fundsforngos-individuals": "2026-07-19",
-    "fundsforngos-health": "2026-07-19",
-    "brave-web-search": "2026-07-19",
-    "brave-linkedin-search": "2026-07-19",
-    "claude-web-research": "2026-07-18"
+    "gov-business-finance": "2026-07-20",
+    "innovate-uk-connect-opportunities": "2026-07-20",
+    "ifs-search": "2026-07-20",
+    "rnid-funding": "2026-07-20",
+    "unltd-awards": "2026-07-20",
+    "raeng-enterprise-fellowships": "2026-07-20",
+    "fundsforngos-individuals": "2026-07-20",
+    "fundsforngos-health": "2026-07-20",
+    "brave-web-search": "2026-07-20",
+    "brave-linkedin-search": "2026-07-20",
+    "claude-web-research": "2026-07-20"
   }
 }
