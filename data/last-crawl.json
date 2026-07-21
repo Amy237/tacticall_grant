@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-07-20T09:26:29.189Z",
+  "ranAt": "2026-07-21T08:36:58.657Z",
   "sourcesChecked": 12,
-  "candidatesFound": 45,
-  "totalGrants": 88,
+  "candidatesFound": 46,
+  "totalGrants": 89,
   "log": [
     {
       "source": "GOV.UK — Finance and support for your business",
@@ -32,7 +32,7 @@
     {
       "source": "Royal Academy of Engineering — Enterprise Fellowships",
       "ok": true,
-      "matches": 0
+      "matches": 1
     },
     {
       "source": "FundsforNGOs — funding for individuals",
@@ -57,25 +57,27 @@
     {
       "source": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
       "ok": true,
-      "matches": 13
+      "matches": 14
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
       "ok": true,
-      "matches": 1
+      "matches": 0,
+      "skipped": true,
+      "reason": "throttled — last ran 2026-07-20, runs every 2 day(s)"
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-07-20",
-    "innovate-uk-connect-opportunities": "2026-07-20",
-    "ifs-search": "2026-07-20",
-    "rnid-funding": "2026-07-20",
-    "unltd-awards": "2026-07-20",
-    "raeng-enterprise-fellowships": "2026-07-20",
-    "fundsforngos-individuals": "2026-07-20",
-    "fundsforngos-health": "2026-07-20",
-    "brave-web-search": "2026-07-20",
-    "brave-linkedin-search": "2026-07-20",
+    "gov-business-finance": "2026-07-21",
+    "innovate-uk-connect-opportunities": "2026-07-21",
+    "ifs-search": "2026-07-21",
+    "rnid-funding": "2026-07-21",
+    "unltd-awards": "2026-07-21",
+    "raeng-enterprise-fellowships": "2026-07-21",
+    "fundsforngos-individuals": "2026-07-21",
+    "fundsforngos-health": "2026-07-21",
+    "brave-web-search": "2026-07-21",
+    "brave-linkedin-search": "2026-07-21",
     "claude-web-research": "2026-07-20"
   }
 }
