@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-07-22T08:36:17.313Z",
+  "ranAt": "2026-07-23T08:38:13.924Z",
   "sourcesChecked": 12,
   "candidatesFound": 44,
   "totalGrants": 90,
@@ -36,8 +36,8 @@
     },
     {
       "source": "FundsforNGOs — funding for individuals",
-      "ok": false,
-      "error": "HTTP 403"
+      "ok": true,
+      "matches": 0
     },
     {
       "source": "FundsforNGOs — health grants",
@@ -52,12 +52,12 @@
     {
       "source": "Brave Search — 通用资助/加速器搜索",
       "ok": true,
-      "matches": 18
+      "matches": 19
     },
     {
       "source": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
       "ok": true,
-      "matches": 14
+      "matches": 13
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-07-22",
-    "innovate-uk-connect-opportunities": "2026-07-22",
-    "ifs-search": "2026-07-22",
-    "rnid-funding": "2026-07-22",
-    "unltd-awards": "2026-07-22",
-    "raeng-enterprise-fellowships": "2026-07-22",
-    "fundsforngos-individuals": "2026-07-21",
-    "fundsforngos-health": "2026-07-22",
-    "brave-web-search": "2026-07-22",
-    "brave-linkedin-search": "2026-07-22",
+    "gov-business-finance": "2026-07-23",
+    "innovate-uk-connect-opportunities": "2026-07-23",
+    "ifs-search": "2026-07-23",
+    "rnid-funding": "2026-07-23",
+    "unltd-awards": "2026-07-23",
+    "raeng-enterprise-fellowships": "2026-07-23",
+    "fundsforngos-individuals": "2026-07-23",
+    "fundsforngos-health": "2026-07-23",
+    "brave-web-search": "2026-07-23",
+    "brave-linkedin-search": "2026-07-23",
     "claude-web-research": "2026-07-20"
   }
 }
