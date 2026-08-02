@@ -1,7 +1,7 @@
 {
-  "ranAt": "2026-08-01T08:27:40.603Z",
+  "ranAt": "2026-08-02T08:30:38.453Z",
   "sourcesChecked": 12,
-  "candidatesFound": 42,
+  "candidatesFound": 43,
   "totalGrants": 97,
   "log": [
     {
@@ -57,7 +57,7 @@
     {
       "source": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
       "ok": true,
-      "matches": 14
+      "matches": 15
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-08-01",
-    "innovate-uk-connect-opportunities": "2026-08-01",
-    "ifs-search": "2026-08-01",
-    "rnid-funding": "2026-08-01",
-    "unltd-awards": "2026-08-01",
-    "raeng-enterprise-fellowships": "2026-08-01",
-    "fundsforngos-individuals": "2026-08-01",
-    "fundsforngos-health": "2026-08-01",
-    "brave-web-search": "2026-08-01",
-    "brave-linkedin-search": "2026-08-01",
+    "gov-business-finance": "2026-08-02",
+    "innovate-uk-connect-opportunities": "2026-08-02",
+    "ifs-search": "2026-08-02",
+    "rnid-funding": "2026-08-02",
+    "unltd-awards": "2026-08-02",
+    "raeng-enterprise-fellowships": "2026-08-02",
+    "fundsforngos-individuals": "2026-08-02",
+    "fundsforngos-health": "2026-08-02",
+    "brave-web-search": "2026-08-02",
+    "brave-linkedin-search": "2026-08-02",
     "claude-web-research": "2026-07-20"
   }
 }
