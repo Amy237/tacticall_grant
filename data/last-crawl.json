@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-09-29T12:29:55.045Z",
+  "ranAt": "2026-09-30T12:14:51.011Z",
   "sourcesChecked": 12,
   "candidatesFound": 47,
   "totalGrants": 140,
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-09-29",
-    "innovate-uk-connect-opportunities": "2026-09-29",
-    "ifs-search": "2026-09-29",
-    "rnid-funding": "2026-09-29",
-    "unltd-awards": "2026-09-29",
-    "raeng-enterprise-fellowships": "2026-09-29",
+    "gov-business-finance": "2026-09-30",
+    "innovate-uk-connect-opportunities": "2026-09-30",
+    "ifs-search": "2026-09-30",
+    "rnid-funding": "2026-09-30",
+    "unltd-awards": "2026-09-30",
+    "raeng-enterprise-fellowships": "2026-09-30",
     "fundsforngos-individuals": "2026-09-16",
-    "fundsforngos-health": "2026-09-29",
-    "brave-web-search": "2026-09-29",
-    "brave-linkedin-search": "2026-09-29",
+    "fundsforngos-health": "2026-09-30",
+    "brave-web-search": "2026-09-30",
+    "brave-linkedin-search": "2026-09-30",
     "claude-web-research": "2026-07-20"
   }
 }
