@@ -1,7 +1,7 @@
 {
-  "ranAt": "2026-10-11T12:27:08.431Z",
+  "ranAt": "2026-10-12T14:58:19.581Z",
   "sourcesChecked": 12,
-  "candidatesFound": 42,
+  "candidatesFound": 41,
   "totalGrants": 147,
   "log": [
     {
@@ -11,8 +11,8 @@
     },
     {
       "source": "Innovate UK Business Connect — Opportunities",
-      "ok": true,
-      "matches": 1
+      "ok": false,
+      "error": "This operation was aborted"
     },
     {
       "source": "Innovation Funding Service — competition search",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-10-11",
+    "gov-business-finance": "2026-10-12",
     "innovate-uk-connect-opportunities": "2026-10-11",
-    "ifs-search": "2026-10-11",
-    "rnid-funding": "2026-10-11",
-    "unltd-awards": "2026-10-11",
-    "raeng-enterprise-fellowships": "2026-10-11",
+    "ifs-search": "2026-10-12",
+    "rnid-funding": "2026-10-12",
+    "unltd-awards": "2026-10-12",
+    "raeng-enterprise-fellowships": "2026-10-12",
     "fundsforngos-individuals": "2026-09-16",
-    "fundsforngos-health": "2026-10-11",
-    "brave-web-search": "2026-10-11",
-    "brave-linkedin-search": "2026-10-11",
+    "fundsforngos-health": "2026-10-12",
+    "brave-web-search": "2026-10-12",
+    "brave-linkedin-search": "2026-10-12",
     "claude-web-research": "2026-07-20"
   }
 }
