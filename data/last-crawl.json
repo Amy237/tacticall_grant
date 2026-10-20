@@ -1,7 +1,7 @@
 {
-  "ranAt": "2026-10-19T12:41:53.632Z",
+  "ranAt": "2026-10-20T11:13:41.261Z",
   "sourcesChecked": 12,
-  "candidatesFound": 43,
+  "candidatesFound": 37,
   "totalGrants": 153,
   "log": [
     {
@@ -21,8 +21,8 @@
     },
     {
       "source": "RNID — Apply for research funding",
-      "ok": true,
-      "matches": 6
+      "ok": false,
+      "error": "HTTP 522"
     },
     {
       "source": "UnLtd — Awards for social entrepreneurs",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-10-19",
-    "innovate-uk-connect-opportunities": "2026-10-19",
-    "ifs-search": "2026-10-19",
+    "gov-business-finance": "2026-10-20",
+    "innovate-uk-connect-opportunities": "2026-10-20",
+    "ifs-search": "2026-10-20",
     "rnid-funding": "2026-10-19",
-    "unltd-awards": "2026-10-19",
-    "raeng-enterprise-fellowships": "2026-10-19",
+    "unltd-awards": "2026-10-20",
+    "raeng-enterprise-fellowships": "2026-10-20",
     "fundsforngos-individuals": "2026-09-16",
-    "fundsforngos-health": "2026-10-19",
-    "brave-web-search": "2026-10-19",
-    "brave-linkedin-search": "2026-10-19",
+    "fundsforngos-health": "2026-10-20",
+    "brave-web-search": "2026-10-20",
+    "brave-linkedin-search": "2026-10-20",
     "claude-web-research": "2026-07-20"
   }
 }
