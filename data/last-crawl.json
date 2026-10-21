@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-10-20T11:13:41.261Z",
+  "ranAt": "2026-10-21T11:29:13.634Z",
   "sourcesChecked": 12,
-  "candidatesFound": 37,
-  "totalGrants": 153,
+  "candidatesFound": 44,
+  "totalGrants": 155,
   "log": [
     {
       "source": "GOV.UK — Finance and support for your business",
@@ -21,8 +21,8 @@
     },
     {
       "source": "RNID — Apply for research funding",
-      "ok": false,
-      "error": "HTTP 522"
+      "ok": true,
+      "matches": 6
     },
     {
       "source": "UnLtd — Awards for social entrepreneurs",
@@ -57,7 +57,7 @@
     {
       "source": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
       "ok": true,
-      "matches": 14
+      "matches": 15
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-10-20",
-    "innovate-uk-connect-opportunities": "2026-10-20",
-    "ifs-search": "2026-10-20",
-    "rnid-funding": "2026-10-19",
-    "unltd-awards": "2026-10-20",
-    "raeng-enterprise-fellowships": "2026-10-20",
+    "gov-business-finance": "2026-10-21",
+    "innovate-uk-connect-opportunities": "2026-10-21",
+    "ifs-search": "2026-10-21",
+    "rnid-funding": "2026-10-21",
+    "unltd-awards": "2026-10-21",
+    "raeng-enterprise-fellowships": "2026-10-21",
     "fundsforngos-individuals": "2026-09-16",
-    "fundsforngos-health": "2026-10-20",
-    "brave-web-search": "2026-10-20",
-    "brave-linkedin-search": "2026-10-20",
+    "fundsforngos-health": "2026-10-21",
+    "brave-web-search": "2026-10-21",
+    "brave-linkedin-search": "2026-10-21",
     "claude-web-research": "2026-07-20"
   }
 }
