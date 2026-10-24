@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-23T11:19:12.447Z",
+  "ranAt": "2026-10-24T10:38:28.525Z",
   "sourcesChecked": 12,
   "candidatesFound": 44,
   "totalGrants": 158,
@@ -47,7 +47,7 @@
     {
       "source": "King's Trust — Enterprise programme",
       "ok": false,
-      "error": "HTTP 404"
+      "error": "HTTP 403"
     },
     {
       "source": "Brave Search — 通用资助/加速器搜索",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-10-23",
-    "innovate-uk-connect-opportunities": "2026-10-23",
-    "ifs-search": "2026-10-23",
-    "rnid-funding": "2026-10-23",
-    "unltd-awards": "2026-10-23",
-    "raeng-enterprise-fellowships": "2026-10-23",
+    "gov-business-finance": "2026-10-24",
+    "innovate-uk-connect-opportunities": "2026-10-24",
+    "ifs-search": "2026-10-24",
+    "rnid-funding": "2026-10-24",
+    "unltd-awards": "2026-10-24",
+    "raeng-enterprise-fellowships": "2026-10-24",
     "fundsforngos-individuals": "2026-09-16",
-    "fundsforngos-health": "2026-10-23",
-    "brave-web-search": "2026-10-23",
-    "brave-linkedin-search": "2026-10-23",
+    "fundsforngos-health": "2026-10-24",
+    "brave-web-search": "2026-10-24",
+    "brave-linkedin-search": "2026-10-24",
     "claude-web-research": "2026-07-20"
   }
 }
