@@ -1,8 +1,8 @@
 {
-  "ranAt": "2026-11-23T17:46:22.393Z",
+  "ranAt": "2026-11-24T17:18:56.329Z",
   "sourcesChecked": 12,
-  "candidatesFound": 45,
-  "totalGrants": 274,
+  "candidatesFound": 46,
+  "totalGrants": 281,
   "log": [
     {
       "source": "GOV.UK — Finance and support for your business",
@@ -41,13 +41,13 @@
     },
     {
       "source": "FundsforNGOs — health grants",
-      "ok": true,
-      "matches": 0
+      "ok": false,
+      "error": "HTTP 403"
     },
     {
       "source": "King's Trust — Enterprise programme",
       "ok": false,
-      "error": "HTTP 403"
+      "error": "HTTP 404"
     },
     {
       "source": "Brave Search — 通用资助/加速器搜索",
@@ -57,7 +57,7 @@
     {
       "source": "Brave Search — LinkedIn 站内搜索 (grant/accelerator 帖子)",
       "ok": true,
-      "matches": 17
+      "matches": 18
     },
     {
       "source": "Claude 网络调研 (语义理解搜索)",
@@ -66,16 +66,16 @@
     }
   ],
   "sourceLastRun": {
-    "gov-business-finance": "2026-11-23",
-    "innovate-uk-connect-opportunities": "2026-11-23",
-    "ifs-search": "2026-11-23",
-    "rnid-funding": "2026-11-23",
-    "unltd-awards": "2026-11-23",
-    "raeng-enterprise-fellowships": "2026-11-23",
+    "gov-business-finance": "2026-11-24",
+    "innovate-uk-connect-opportunities": "2026-11-24",
+    "ifs-search": "2026-11-24",
+    "rnid-funding": "2026-11-24",
+    "unltd-awards": "2026-11-24",
+    "raeng-enterprise-fellowships": "2026-11-24",
     "fundsforngos-individuals": "2026-09-16",
     "fundsforngos-health": "2026-11-23",
-    "brave-web-search": "2026-11-23",
-    "brave-linkedin-search": "2026-11-23",
+    "brave-web-search": "2026-11-24",
+    "brave-linkedin-search": "2026-11-24",
     "claude-web-research": "2026-07-20"
   }
 }
